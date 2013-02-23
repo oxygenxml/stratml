@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PerformancePlanOrReport xmlns="http://www.stratml.net/PerformancePlanOrReport"
+  Type="Performance_Plan">
+  <Name>Name</Name>
+  <StrategicPlanCore>
+    <Goal>
+      <Name>Your Goal</Name>
+      <Description>Your Goal Description</Description>
+    </Goal>
+    <Goal>
+      <Name>Your Second Goal</Name>
+      <Description>Your Second Goal Description</Description>
+    </Goal>
+  </StrategicPlanCore>
+</PerformancePlanOrReport>

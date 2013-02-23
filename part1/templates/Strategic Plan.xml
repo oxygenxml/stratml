@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StrategicPlan xmlns="http://www.stratml.net">
+  <Name>My Plan</Name>
+  <StrategicPlanCore>
+    <Goal>
+      <Name>My Goal</Name>
+      <Description>My Goal Description</Description>
+    </Goal>
+    <Goal>
+      <Name>My Second Goal</Name>
+      <Description>My Second Goal Description</Description>
+    </Goal>
+  </StrategicPlanCore>
+</StrategicPlan>
