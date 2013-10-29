@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="15.0" xml:space="preserve">
+<serialized version="15.1" xml:space="preserve">
 	<map>
 		<entry>
 			<String>document.types</String>
@@ -21,19 +21,44 @@
 					<field name="classpath">
 						<String-array/>
 					</field>
+					<field name="parentClassLoaderID">
+						<null/>
+					</field>
 					<field name="authorExtensionDescriptor">
 						<authorExtension>
 							<field name="cssDescriptors">
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/css/stratml.css</String>
+											<String>${framework}/css/stratmlEditing.css</String>
 										</field>
 										<field name="title">
-											<String></String>
+											<String>Edit controls</String>
 										</field>
 										<field name="alternate">
 											<Boolean>false</Boolean>
+										</field>
+									</cssFile>
+									<cssFile>
+										<field name="href">
+											<String>${framework}/css/stratmlEnhanced.css</String>
+										</field>
+										<field name="title">
+											<String>Enhanced</String>
+										</field>
+										<field name="alternate">
+											<Boolean>true</Boolean>
+										</field>
+									</cssFile>
+									<cssFile>
+										<field name="href">
+											<String>${framework}/css/stratml.css</String>
+										</field>
+										<field name="title">
+											<String>Default</String>
+										</field>
+										<field name="alternate">
+											<Boolean>true</Boolean>
 										</field>
 									</cssFile>
 								</cssFile-array>
@@ -42,7 +67,2792 @@
 								<Boolean>false</Boolean>
 							</field>
 							<field name="actionDescriptors">
-								<action-array/>
+								<action-array>
+									<action>
+										<field name="id">
+											<String>add.name</String>
+										</field>
+										<field name="name">
+											<String>+Name</String>
+										</field>
+										<field name="description">
+											<String>Add Name</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:Name)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Inside as first child</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addName.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[*:Name]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addName.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>*:Name</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:Name</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Organization or self::*:Stakeholder or self::*:Role or self::*:Goal or self::*:Objective or self::*:Value or self::*:Relationship</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addName.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>noop</String>
+										</field>
+										<field name="name">
+											<String>NoOperation</String>
+										</field>
+										<field name="description">
+											<String>No operation	</String>
+										</field>
+										<field name="largeIconPath">
+											<String>${framework}/images/invisible.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>${framework}/images/invisible.png</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/noop.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>delete</String>
+										</field>
+										<field name="name">
+											<String>X</String>
+										</field>
+										<field name="description">
+											<String>Delete the current element</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map/>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.DeleteElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.goal</String>
+										</field>
+										<field name="name">
+											<String>+Goal</String>
+										</field>
+										<field name="description">
+											<String>Add a new goal</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Goal</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addGoal.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:StrategicPlanCore</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addGoal.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.description</String>
+										</field>
+										<field name="name">
+											<String>+Desription</String>
+										</field>
+										<field name="description">
+											<String>Add description information</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:Description) and not(*:Name)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Inside as first child</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addDescription.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:Description)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addDescription.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:Name</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*[*:Description]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addDescription.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>*:Description</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:Description</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Organization or self::*:Stakeholder or self::*:Role  or self::*:Goal or self::*:Objective or self::*:Vision or self::*:Mission or self::*:Value  or self::*:TargetResult  or self::*:ActualResult or self::*:Relationship</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addDescription.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.other.information</String>
+										</field>
+										<field name="name">
+											<String>+Other Information</String>
+										</field>
+										<field name="description">
+											<String>Add other information</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:OtherInformation) and not(*:Description) and not(*:Name)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Inside as first child</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addOtherInformation.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:OtherInformation)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addOtherInformation.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>(*:Name, *:Description)[last()]</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*[*:OtherInformation]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addOtherInformation.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>*:OtherInformation</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:OtherInformation</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Goal or self::*:Objective or self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addOtherInformation.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.strategic.plan.core</String>
+										</field>
+										<field name="name">
+											<String>+Strategic Plan Core</String>
+										</field>
+										<field name="description">
+											<String>Add strategic plan core information</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:StrategicPlanCore) and not(*:OtherInformation) and not(*:Description) and not(*:Name)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Inside as first child</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addStrategicPlanCore.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:StrategicPlanCore)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addStrategicPlanCore.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>(*:Name, *:Description, *:OtherInformation)[last()]</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*[*:StrategicPlanCore]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addStrategicPlanCore.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>*:StrategicPlanCore</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:StrategicPlanCore</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.administrative.information</String>
+										</field>
+										<field name="name">
+											<String>+Administrative Information</String>
+										</field>
+										<field name="description">
+											<String>Add administrative information</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:AdministrativeInformation) and not(*:StrategicPlanCore) and not(*:OtherInformation) and not(*:Description) and not(*:Name)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Inside as first child</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addAdministrativeInformation.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:AdministrativeInformation) and not(*:StrategicPlanCore) and not(*:OtherInformation) and not(*:Description) and not(*:Name)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;AdministrativeInformation xmlns="http://www.stratml.net/PerformancePlanOrReport">
+ &lt;/AdministrativeInformation></String>
+															</entry>
+															<entry>
+																<String>schemaAware</String>
+																<String>false</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:AdministrativeInformation)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addAdministrativeInformation.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>(*:Name, *:Description, *:OtherInformation, *:StrategicPlanCore)[last()]</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:AdministrativeInformation)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;AdministrativeInformation xmlns="http://www.stratml.net/PerformancePlanOrReport">
+ &lt;/AdministrativeInformation></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>(*:Name, *:Description, *:OtherInformation, *:StrategicPlanCore)[last()]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>schemaAware</String>
+																<String>false</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*[*:AdministrativeInformation]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addAdministrativeInformation.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>*:AdministrativeInformation</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:AdministrativeInformation</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.submitter</String>
+										</field>
+										<field name="name">
+											<String>+Submitter</String>
+										</field>
+										<field name="description">
+											<String>Add submitter information</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformancePlanOrReport[not(*:Submitter)]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addSubmitter.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*[*:Submitter]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addSubmitter.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>*:Submitter</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:Submitter</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.organization</String>
+										</field>
+										<field name="name">
+											<String>+Organization</String>
+										</field>
+										<field name="description">
+											<String>Add a new organization</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Organization</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addOrganization.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:StrategicPlanCore</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addOrganization.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.identifier</String>
+										</field>
+										<field name="name">
+											<String>+Identifier</String>
+										</field>
+										<field name="description">
+											<String>Add identifier</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*[*:Identifier]</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addIdentifier.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>*:Identifier</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>*:Identifier</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Submitter or self::*:AdministrativeInformation or self::*:Organization  or self::*:Goal or self::*:Objective or self::*:Vision or self::*:Mission or self::*:Relationship or self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addIdentifier.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>clear</String>
+										</field>
+										<field name="name">
+											<String>clear</String>
+										</field>
+										<field name="description">
+											<String>Remove text</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/clear.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.last.name</String>
+										</field>
+										<field name="name">
+											<String>+Last Name</String>
+										</field>
+										<field name="description">
+											<String>Add last name</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Submitter</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addLastName.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.first.name</String>
+										</field>
+										<field name="name">
+											<String>+First Name</String>
+										</field>
+										<field name="description">
+											<String>Add first name</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Submitter</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addFirstName.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.phone.number</String>
+										</field>
+										<field name="name">
+											<String>+Phone Number</String>
+										</field>
+										<field name="description">
+											<String>Add phone number</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Submitter</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addPhoneNumber.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.email.address</String>
+										</field>
+										<field name="name">
+											<String>+Email Address</String>
+										</field>
+										<field name="description">
+											<String>Add email address</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Submitter</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addEmailAddress.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.start.date</String>
+										</field>
+										<field name="name">
+											<String>+Start Date</String>
+										</field>
+										<field name="description">
+											<String>Add start date</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:AdministrativeInformation  or self::*:TargetResult  or self::*:ActualResult</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addStartDate.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.end.date</String>
+										</field>
+										<field name="name">
+											<String>+End Date</String>
+										</field>
+										<field name="description">
+											<String>Add end date</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:AdministrativeInformation or self::*:TargetResult  or self::*:ActualResult</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addEndDate.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.publication.date</String>
+										</field>
+										<field name="name">
+											<String>+Publication Date</String>
+										</field>
+										<field name="description">
+											<String>Add publication date</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:AdministrativeInformation</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addPublicationDate.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.source</String>
+										</field>
+										<field name="name">
+											<String>+Source</String>
+										</field>
+										<field name="description">
+											<String>Add source information</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:AdministrativeInformation</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addSource.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.mission</String>
+										</field>
+										<field name="name">
+											<String>+Mission</String>
+										</field>
+										<field name="description">
+											<String>Add mission</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:StrategicPlanCore</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addMission.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.vision</String>
+										</field>
+										<field name="name">
+											<String>+Vision</String>
+										</field>
+										<field name="description">
+											<String>Add vision</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:StrategicPlanCore</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addVision.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.value</String>
+										</field>
+										<field name="name">
+											<String>+Value</String>
+										</field>
+										<field name="description">
+											<String>Add a new value</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Value</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addValue.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:StrategicPlanCore</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addValue.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.acronym</String>
+										</field>
+										<field name="name">
+											<String>+Acronym</String>
+										</field>
+										<field name="description">
+											<String>Add acronym</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Organization</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addAcronym.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.stakeholder</String>
+										</field>
+										<field name="name">
+											<String>+Stakeholder</String>
+										</field>
+										<field name="description">
+											<String>Add stakeholder</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Organization or self::*:Goal or self::*:Objective</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addStakeholder.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Stakeholder</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addStakeholder.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.role</String>
+										</field>
+										<field name="name">
+											<String>+Role</String>
+										</field>
+										<field name="description">
+											<String>Add role</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Stakeholder</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addRole.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.role.type</String>
+										</field>
+										<field name="name">
+											<String>+Role Type</String>
+										</field>
+										<field name="description">
+											<String>Add role type</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Role</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addRoleType.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.sequence.indicator</String>
+										</field>
+										<field name="name">
+											<String>+Sequence Indicator</String>
+										</field>
+										<field name="description">
+											<String>Add sequence indicator</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Goal or self::*:Objective or self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addSequenceIndicator.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.objective</String>
+										</field>
+										<field name="name">
+											<String>+Objective</String>
+										</field>
+										<field name="description">
+											<String>Add objective	</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Goal</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addObjective.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Objective</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addObjective.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.performance.indicator</String>
+										</field>
+										<field name="name">
+											<String>+Performance Indicator</String>
+										</field>
+										<field name="description">
+											<String>Add performance indicator</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Objective</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addPerformanceIndicator.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.measurement.dimension</String>
+										</field>
+										<field name="name">
+											<String>+Measurement Dimension</String>
+										</field>
+										<field name="description">
+											<String>Add measurement dimension</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addMeasurementDimension.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.unit.of.measurement</String>
+										</field>
+										<field name="name">
+											<String>+Unit Of Measurement</String>
+										</field>
+										<field name="description">
+											<String>Add unit of measurement</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addUnitOfMeasurement.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.relationship</String>
+										</field>
+										<field name="name">
+											<String>+Relationship</String>
+										</field>
+										<field name="description">
+											<String>Add relationship</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addRelationship.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.measurement.instance</String>
+										</field>
+										<field name="name">
+											<String>+Measurement Instance</String>
+										</field>
+										<field name="description">
+											<String>Add measurement instance</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addMeasurementInstance.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.target.result</String>
+										</field>
+										<field name="name">
+											<String>+Target Result</String>
+										</field>
+										<field name="description">
+											<String>Add target result</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:MeasurementInstance</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addTargetResult.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:TargetResult</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addTargetResult.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.actual.result</String>
+										</field>
+										<field name="name">
+											<String>+Actual Result</String>
+										</field>
+										<field name="description">
+											<String>Add actual result</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:MeasurementInstance</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addActualResult.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:ActualResult</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addActualResult.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add.number.of.units</String>
+										</field>
+										<field name="name">
+											<String>+Number Of Units</String>
+										</field>
+										<field name="description">
+											<String>Add number of units</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:TargetResult  or self::*:ActualResult</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addNumberOfUnits.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+								</action-array>
 							</field>
 							<field name="menubarDescriptor">
 								<menu>
@@ -268,10 +3078,10 @@
 						<null/>
 					</field>
 					<field name="useImposedInitialPage">
-						<Boolean>false</Boolean>
+						<Boolean>true</Boolean>
 					</field>
 					<field name="imposedInitialPage">
-						<String>Text</String>
+						<String>Author</String>
 					</field>
 					<field name="elementLocatorExtension">
 						<null/>
@@ -301,6 +3111,9 @@
 						<null/>
 					</field>
 					<field name="externalObjectInsertionHandler">
+						<null/>
+					</field>
+					<field name="customAttributeValueEditor">
 						<null/>
 					</field>
 				</documentTypeDescriptor>
