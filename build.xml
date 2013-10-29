@@ -1,0 +1,44 @@
+<project basedir="." default="makeAddon" name="oXygen-StratML-framework">
+	<target name="copyResources">
+		<delete dir="dist"/>
+		<mkdir dir="dist"/>
+		
+		<copy todir="dist/startml/css">
+			<fileset dir="css"/>
+		</copy>
+		<copy todir="dist/startml/images">
+			<fileset dir="images"/>
+		</copy>
+		<copy todir="dist/startml/part1">
+			<fileset dir="part1"/>
+		</copy>
+		<copy todir="dist/startml/part2">
+			<fileset dir="part2"/>
+		</copy>
+		<copy todir="dist/startml/xsl">
+			<fileset dir="xsl"/>
+		</copy>
+		<copy todir="dist/startml">
+			<fileset file="stratml1.framework"/>
+			<fileset file="stratml2.framework"/>
+			<fileset file="LICENCE.txt"/>
+			<fileset file="description.html"/>
+			<fileset file="README.md"/>
+		</copy>
+	</target>
+	
+	<target name="zip" depends="copyResources">
+		<zip destfile="dist/startml.zip" basedir="dist"/>
+	</target>
+
+	
+	<target name="makeAddon" depends="zip">
+		<copy file="dist/startml.zip" todir="addon"/>
+		<delete dir="dist"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="dist"/>
+		<delete file="addon/startml.zip"/>
+	</target>
+</project>
