@@ -29,412 +29,98 @@
  * Revision history:
  * February 19, 2012 - George Bina: 
  *   - Initial version of the CSS stylesheet
- * 
+ * October 20, 2013 - George Bina
+ *   - Reorganized.
  */
-PerformancePlanOrReport:before {
-  content : attr(Type);
-  font-size: 2.2em;
-  font-weight :bold;
-}
-PerformancePlanOrReport {
-  text-align :center;
-  display : block;
-  margin-left : 20px;
-  padding-bottom : 2em;
-}
 
-StrategicPlan:before {
-  content : 'Strategic Plan';
-  font-size: 2.2em;
-  font-weight :bold;
-}
-StrategicPlan {
-  text-align :center;
-  display : block;
-  margin-left : 20px;
-  padding-bottom : 2em;
-}
+/************************************/
+/* Blocks and inlines */
+/************************************/
+* {display : block;}
 
-Name {
-  text-align :center;
-  color : blue;
-  font-weight :bold;
-  display : block;
-}
+/************************************/
+/* margins, padding and borders */
+/************************************/
 
-Description:before {
-  content : 'Description: ';
-  font-weight:bold;
-}
-Description {
-  border : 1px dotted #AAAAAA;
-  margin : 0px 20px 5px 20px;
-  padding : 5px;
-  display:block;
-}
+/* margins*/
+* {margin:5px 0px 5px 10px;}
+StrategicPlanCore > * {margin:25px 0px 25px 10px;}
+Goal > Objective {margin:25px 0px 25px 10px;}
 
-OtherInformation:before {
-  content : "Other information: ";
-  font-weight:bold;
-}
+/* padding */
+*     {padding : 5px 0 5px 5px;}
+:root {padding-right:10px;}
 
-OtherInformation {
-  border : 1px dotted #AAAAAA;
-  margin : 0px 20px 0px 20px;
-  padding : 5px;
-  display:block;
-}
-
-StrategicPlanCore {
-  counter-reset:goal_count;
-  margin : 20px 20px 20px 20px;
-  border-top : 1px solid gray;
-  display:block;
-}
-
-Organization:before {
-  content : 'Organization';
-  font-weight :bold;
-  font-size : 1.2em;
-  margin-left : 0;
-  display:block;
-}
-
-Organization {
-  display:block;
-}
-
-Organization > * {
-  margin-left : 20px;
-  display :block; 
-}
-
-Acronym:before {
-  content : 'Acronym: ';
-  font-weight:bold;
-}
-
-Identifier:before {
-  content : 'Identifier: ';
-  font-weight:bold;
-}
-
-Stakeholder {
-  background-color : #F5F5EA;
-  margin-left : 20px;
-  margin-right : 20px;
-  margin-bottom : 10px;
-  margin-top : 10px;
-  display:block;
-}
-
-Stakeholder > Name:before {
-  content : 'Stakeholder ';
-  font-weight:normal;
-}
-Stakeholder > Name {
-  color :black;
-  text-align:left; 
-}
-
-Stakeholder > Description:before,
-Role > Description:before {
-  content : '';
-  display :inline;
-}
-Stakeholder > Description,
-Role > Description {
-  display :inline;
-  margin : 0px 0px 0px 0px;
-  padding : 0px;
-  border : 1px dotted #AAAAAA;
-  color :#339933;
-  font-weight:normal;
-}
-
-Role {
-  display :block;
-  font-weight :bold;
-}
-
-Role > Name:before {
-    content : 'As ';
-    font-weight:normal;
-  
-}
-
-Role > Name {
-  display :inline;
-  text-align :left;
-  color:black;
-}
-
-RoleType:before {
-  content : "[";
-}
-
-RoleType {
-  color : navy;
-}
-RoleType:after {
-  content : "]";
-}
-
-
-
-Vision:before {
-  content : 'Vision';
-  font-weight :bold;
-  font-size : 1.2em;
-  margin-left : 0;
-  display:block;
-}
-
-Vision {
-  display:block;
-}
-
-Vision > * {
-  margin-left : 20px;
-  display :block; 
-}
-
-Mission:before {
-  content : 'Mission';
-  font-weight :bold;
-  font-size : 1.2em;
-  margin-left : 0;
-  display:block;
-}
-
-Mission {
-  display:block;
-}
-
-Mission > * {
-  margin-left : 20px;
-  display :block; 
-}
-
-
-Value:before {
-  content : 'Value';
-  font-weight :bold;
-  font-size : 1.2em;
-  margin-left : 0;
-  display:block;
-}
-
-Value {
-  display:block;
-}
-
-Value > * {
-  margin-left : 20px;
-  display :block; 
-}
-
-
-Goal:before {
-  counter-increment:goal_count;
-  content : 'Goal ' counter(goal_count, decimal);
-  color : blue;
-  font-size : 1.2em;
-  font-weight :bold;  
-  border-top : 1px solid gray;
-  display :block;
-  padding-top : 10px;
-}
-
-Goal {
-  counter-reset:objective_count;
-  display :block;
-  margin : 20px;
-  -oxy-foldable:true;
-  -oxy-not-foldable-child:Name;
-}
-
-Goal > * {
-  margin-left : 20px;
-  display :block; 
-}
-
-SequenceIndicator:before {
-  content : 'Sequence indicator: ';
-}
-
-/* Objective */
-Objective:before {
-  counter-increment:objective_count;
-  content : 'Objective ' counter(goal_count, decimal) '.' counter(objective_count, decimal);
-  color : purple;
-  font-size : 1.2em;
-  font-weight :bold;  
-  border-top : 1px solid gray;
-  display :block;
-  padding-top : 10px;
-}
-
-Objective {
-  display :block;
-  margin : 20px;
-  -oxy-foldable:true;
-  -oxy-not-foldable-child:Name;
-}
-
-Objective > * {
-  margin-left : 20px;
-  display :block; 
-}
-
-Objective > Name {
-  color : purple;
-}
-
-PerformanceIndicator:before {
-  content : "Performance indicator ";
-  font-weight :bold;
-  font-size : 1.1em;
-}
-
-PerformanceIndicator {
-  display :block;
-  content : attr('ValueChainStage');
-  font-weight :bold;
-  
-}
-
-PerformanceIndicator > * {
-  font-weight :normal;
-  display :block;
-}
-
-MeasurementDimension:before {
-  content : 'MeasurementDimension: ';
-  font-weight:bold;
-}
-
-UnitOfMeasurement:before {
-  content : 'UnitOfMeasurement: ';
-  font-weight:bold;
-}
-
-
-Relationship:before {
-  content : "Relationship ";
-  font-weight :normal;
-}
-
-Relationship {
-  display :block;
-  content : attr('RelationshipType');
-  font-weight :bold;
-  
-}
-
-Relationship > * {
-  font-weight :normal;
-  text-align:left;
-}
-
-
-MeasurementInstance:before {
-  content : "Measurement Instance ";
-  font-weight :normal;
-}
-
-MeasurementInstance {
-  display :block;
-  font-weight :bold;
-  
-}
-
-MeasurementInstance > * {
-  font-weight :normal;
-}
-
-TargetResult:before {
-  content : 'Target result';
-}
-
-ActualResult:before {
-  content : 'Actual result';
-}
-
-NumberOfUnits:before {
-  content : 'Number of units: ';
-}
-
-
-AdministrativeInformation:before {
-  content : "Administrative information";
-  font-weight :bold;
-  display:block;
-  border-top : 1px solid gray; 
-}
-AdministrativeInformation {
-  padding-top : 10px;
-  display : block;
-}
-
-AdministrativeInformation > * {
-  display:block;
-  color:blue;
-}
-
-AdministrativeInformation > *:before,
-AdministrativeInformation > *:after {
-  color :gray;
-}
-
-StartDate:before {
-  content : 'Start date: ';
-}
-EndDate:before {
-  content : 'End date: ';
-}
-PublicationDate:before {
-  content : 'Publication date: ';
-}
-
-Source:before {
-  content : '[';
-}
-Source:after {
-  content : ']';
-}
-
-
-Submitter:before {  
-  content : "Submitter";
-  font-weight :bold;
-  display:block;
-  border-top : 1px solid gray;
-}
-Submitter {
-  display : block;
-   
-}
-Submitter > * {
-  display:block;
-}
-
-Submitter > *:before {
-  color :gray;
-}
-FirstName:before {
-  content : 'First name: '
-}
-LastName:before {
-  content : 'Last name: '
-}
-PhoneNumber:before {
-  content : 'Phone: '
-}
-EmailAddress:before {
-  content : 'Email: '
-}
-
+/* borders */
 * {
-  text-align : left;
+  border-left : 1px solid #E0E0E0;
+  border-bottom : 1px solid #E0E0E0;
 }
+
+/************************************/
+/* colors and fonts */
+/************************************/
+*:before  {color : gray;}
+*:empty   {color : gray;}
+*:after   {color : gray;}
+
+*:before  {font-weight : bold;}
+Name      {font-weight : bold;}
+
+:root:before {font-size: 1.6em;}
+:root > Name {font-size: 1.8em;}
+
+/************************************/
+/* Labels and counters */
+/************************************/
+
+/* counters */
+StrategicPlanCore {counter-reset:goal_count;}
+Goal:before       {counter-increment:goal_count;}
+Goal              {counter-reset:objective_count;}
+Objective:before  {counter-increment:objective_count;}
+
+PerformancePlanOrReport[Type="Performance_Report"]:before 
+                            {content : "Performance Report";}
+PerformancePlanOrReport[Type="Performance_Plan"]:before 
+                            {content : "Performance Plan";}
+PerformancePlanOrReport[Type="Strategic_Plan"]:before,
+StrategicPlan:before        {content : 'Strategic Plan';}
+Description:before          {content : 'Description: ';}
+OtherInformation:before     {content : "Other information: ";}
+Organization:before         {content : 'Organization';}
+Acronym:before              {content : 'Acronym: ';}
+Identifier:before           {content : 'Identifier: ';}
+Stakeholder:before          {content : 'Stakeholder ';}
+Role:before                 {content : 'Role';}
+Vision:before               {content : 'Vision';}
+Mission:before              {content : 'Mission';}
+Value:before                {content : 'Value';}
+RoleType:before             {content : "Role type: ";}
+MeasurementDimension:before {content : 'Measurement Dimension: ';}
+UnitOfMeasurement:before    {content : 'Unit Of Measurement: ';}
+Relationship:before         {content : "Relationship /" attr('RelationshipType');  }
+MeasurementInstance:before  {content : "Measurement Instance ";}
+TargetResult:before         {content : 'Target result';}
+ActualResult:before         {content : 'Actual result';}
+NumberOfUnits:before        {content : 'Number of units: ';}
+StartDate:before            {content : 'Start date: ';}
+EndDate:before              {content : 'End date: ';}
+PublicationDate:before      {content : 'Publication date: ';}
+FirstName:before            {content : 'First name: '}
+LastName:before             {content : 'Last name: '}
+PhoneNumber:before          {content : 'Phone: '}
+EmailAddress:before         {content : 'Email: '}
+Relationship > Name:before  {content : "Name: ";}
+Submitter:before            {content : "Submitter information ";}
+AdministrativeInformation:before 
+                            {content : "Administrative information";}
+Submitter:before            {content : "Submitter";}
+SequenceIndicator:before    {content : 'Sequence indicator: ';}
+Goal:before                 {content : 'Goal ' counter(goal_count, decimal);}
+Objective:before            {content : 'Objective ' counter(goal_count, decimal) 
+                                        '.' counter(objective_count, decimal);}
+PerformanceIndicator:before {content : "Performance indicator / " 
+                                        attr('ValueChainStage') " / " 
+                                        attr('PerformanceIndicatorType');}
+Source:before               {content : 'Source: ';}
