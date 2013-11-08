@@ -41,6 +41,17 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
+											<String>${framework}/css/stratmlEditingHover.css</String>
+										</field>
+										<field name="title">
+											<String>Edit with controls on hover</String>
+										</field>
+										<field name="alternate">
+											<Boolean>true</Boolean>
+										</field>
+									</cssFile>
+									<cssFile>
+										<field name="href">
 											<String>${framework}/css/stratmlEnhanced.css</String>
 										</field>
 										<field name="title">
@@ -1191,7 +1202,7 @@
 											<String>clear</String>
 										</field>
 										<field name="name">
-											<String>clear</String>
+											<String>Clear</String>
 										</field>
 										<field name="description">
 											<String>Remove text</String>
@@ -2372,6 +2383,38 @@
 														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
 													</field>
 												</actionMode>
+											<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:PerformanceIndicator</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addPerformanceIndicator.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
 											</actionMode-array>
 										</field>
 									</action>
@@ -2585,6 +2628,38 @@
 															<entry>
 																<String>action</String>
 																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/addMeasurementInstance.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:MeasurementInstance</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>caretPosition</String>
@@ -2847,6 +2922,49 @@
 													</field>
 													<field name="operationID">
 														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+								<action>
+										<field name="id">
+											<String>publish</String>
+										</field>
+										<field name="name">
+											<String>Publish</String>
+										</field>
+										<field name="description">
+											<String>Convert StratML Part 2 to HTML</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>scenarioNames</String>
+																<String>StratML Part 2 to HTML</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteTransformationScenariosOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
