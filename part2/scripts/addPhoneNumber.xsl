@@ -4,7 +4,7 @@
  
   <xsl:import href="common.xsl"/>
    
-  <xsl:template match="/*:Sumbitter[not(*:PhoneNumber)]">
+  <xsl:template match="/*:Submitter[not(*:PhoneNumber)]">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:choose>

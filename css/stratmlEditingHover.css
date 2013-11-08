@@ -36,8 +36,8 @@
 @namespace oxy url('http://www.oxygenxml.com/extensions/author');
 
 PerformancePlanOrReport:before {
-  content:
-    oxy_label(      
+  content: 
+  oxy_label(      
       text, 'Click on ', 
       styles, 'font-size: .5em; color:#AAAAAA;'
     )
@@ -51,7 +51,7 @@ PerformancePlanOrReport:before {
       styles, 'font-size: .5em; color:#AAAAAA;'
     )
     "\A"
-
+    
     oxy_label(      
       text, 'Click on the value to select the document type: ', 
       styles, 'font-size: .5em; color:#AAAAAA;'
@@ -116,7 +116,7 @@ StrategicPlanCore:after{
   ;
 }
 
-Organization:before {
+Organization:hover:before {
   content:
     "Organization "
     oxy_buttonGroup(
@@ -138,6 +138,10 @@ Organization:before {
 
 Organization:after {
   display:block;
+  content: " ";
+}
+Organization:hover:after {
+  display:block;
   content: "Use ["
     oxy_button(
       actionID, 'delete',
@@ -153,14 +157,16 @@ Organization:after {
   color:gray;
 }
 
-
-
-
-
-
 Role:after,
 Vision:after,
 Mission:after {
+  display:block;
+  content: " ";
+}
+
+Role:hover:after,
+Vision:hover:after,
+Mission:hover:after {
   display:block;
   content: "Use ["
     oxy_button(
@@ -173,6 +179,11 @@ Mission:after {
 }
 
 Value:after {
+  display:block;
+  content:" ";
+}
+
+Value:hover:after {
   display:block;
   content: "Use ["
     oxy_button(
@@ -208,6 +219,10 @@ PerformanceIndicator:before {
 }
 
 PerformanceIndicator:after {
+  display:block;
+  content: " ";
+}
+PerformanceIndicator:hover:after {
   display:block;
   content: "Use ["
     oxy_button(
@@ -265,6 +280,7 @@ MeasurementInstance:after {
     ) " to add another measurement instance";
   color:gray;
 }
+
 
 TargetResult:before {
   content : "Target Result "
@@ -345,7 +361,7 @@ StartDate, EndDate {
   visibility:-oxy-collapse-text;
 }
 
-Stakeholder:before {
+Stakeholder:hover:before {
   content : "Stakeholder "
     oxy_button(actionID,  'add.name', transparent, true, color, green)
     oxy_button(actionID,  'add.description', transparent, true, color, green)
@@ -354,6 +370,10 @@ Stakeholder:before {
 }
 
 Stakeholder:after {
+  display:block;
+  content : " ";
+}
+Stakeholder:hover:after {
   display:block;
   content: "Use ["
     oxy_button(
@@ -388,34 +408,22 @@ RoleType {
 
 /* Delete after element */
 
-RoleType:after {
-  color: gray;
-  content:
-    "  ["
-    oxy_button(
-      actionID, 'delete',
-      transparent, true,
-      color, red
-    )
-    "]"
-    ; 
-}
 
-Vision:before {
+Vision:hover:before {
   content : "Vision "
     oxy_button(actionID,  'add.description', transparent, true, color, green)
     oxy_button(actionID,  'add.identifier', transparent, true, color, green)
     ;
 }
 
-Mission:before {
+Mission:hover:before {
   content : "Mission "
     oxy_button(actionID,  'add.description', transparent, true, color, green)
     oxy_button(actionID,  'add.identifier', transparent, true, color, green)
     ;
 }
 
-Value:before {
+Value:hover:before {
   content : "Value "
     oxy_button(actionID,  'add.name', transparent, true, color, green)
     oxy_button(actionID,  'add.description', transparent, true, color, green)
@@ -425,7 +433,7 @@ Value:before {
 
 
 
-Goal:before {
+Goal:hover:before {
   content:
     "Goal " counter(goal_count, decimal) " "
     oxy_buttonGroup(
@@ -445,9 +453,12 @@ Goal:before {
   ;
 }
 
-
-
 Goal:after {
+  display:block;
+  content: " "
+}
+
+Goal:hover:after {
   display:block;
   content: "Use ["
     oxy_button(
@@ -471,7 +482,7 @@ Goal:after {
 }
 
 
-Objective:before {
+Objective:hover:before {
   content : 
     'Objective ' counter(goal_count, decimal) 
     '.' counter(objective_count, decimal)
@@ -486,6 +497,11 @@ Objective:before {
 }
 
 Objective:after {
+  display:block;
+  content : " ";
+}
+
+Objective:hover:after {
   display:block;
   content: "Use ["
     oxy_button(
@@ -505,7 +521,7 @@ Objective:after {
 
 /* Administrative information and Summiter */
 
-AdministrativeInformation:before {
+AdministrativeInformation:hover:before {
   content : "Administrative information "
     oxy_button(actionID,  oxy_xpath("if (*:Identifier) then 'noop' else 'add.identifier'"), transparent, true, color, green)
     oxy_button(actionID,  oxy_xpath("if (*:StartDate) then 'noop' else 'add.start.date'"), transparent, true, color, green)
@@ -543,8 +559,8 @@ AdministrativeInformation > Source {
   content : oxy_textfield(edit, "#text", columns, 40);
 }
 
-Submitter:before {
-  content : "Submitter information "
+Submitter:hover:before {
+  content : "Submitter "
     oxy_button(actionID,  oxy_xpath("if (*:Identifier) then 'noop' else 'add.identifier'"), transparent, true, color, green)
     oxy_button(actionID,  oxy_xpath("if (*:FirstName) then 'noop' else 'add.first.name'"), transparent, true, color, green)
     oxy_button(actionID,  oxy_xpath("if (*:LastName) then 'noop' else 'add.last.name'"), transparent, true, color, green)
@@ -590,9 +606,15 @@ Submitter > *:before {
 /* Common actions */
 /************************************************************/
 
-/* Delete this container element */
 Submitter:after,
 AdministrativeInformation:after {
+  color:gray;
+  content: " ";
+}
+
+/* Delete this container element */
+Submitter:hover:after,
+AdministrativeInformation:hover:after {
   color:gray;
   content: "Use ["
     oxy_button(
@@ -605,11 +627,12 @@ AdministrativeInformation:after {
 }
 
 /* Inline delete */
-AdministrativeInformation > *:after,
-Submitter > *:after,
-Identifier:after,
-StartDate:after,
-EndDate:after {
+AdministrativeInformation > *:hover:after,
+Submitter > *:hover:after,
+Identifier:hover:after,
+StartDate:hover:after,
+EndDate:hover:after,
+RoleType:hover:after {
   content: 
   "  ["
     oxy_button(
@@ -621,13 +644,13 @@ EndDate:after {
 }
 
 /* Inline clear and delete */
-Description:after,
-OtherInformation:after,
-Acronym:after,
-SequenceIndicator:after,
-MeasurementDimension:after,
-UnitOfMeasurement:after,
-NumberOfUnits:after
+Description:hover:after,
+OtherInformation:hover:after,
+Acronym:hover:after,
+SequenceIndicator:hover:after,
+MeasurementDimension:hover:after,
+UnitOfMeasurement:hover:after,
+NumberOfUnits:hover:after
 {
   content:
     "  ["
@@ -645,4 +668,7 @@ NumberOfUnits:after
     )
     "]"
 }
+
+
+
 
