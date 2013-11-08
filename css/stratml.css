@@ -66,7 +66,7 @@ Goal > Objective {margin:25px 0px 25px 10px;}
 
 *:before  {font-weight : bold;}
 Name      {font-weight : bold;}
-
+:root        {font-size: 1.2em;}
 :root:before {font-size: 1.6em;}
 :root > Name {font-size: 1.8em;}
 
