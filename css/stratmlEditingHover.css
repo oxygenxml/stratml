@@ -356,7 +356,8 @@ EndDate:before{
 }
 
 
-StartDate, EndDate {
+StartDate, EndDate,
+StartDate:empty, EndDate:empty {
   content:oxy_datePicker(edit, "#text", format, "yyyy-MM-dd", columns, 16);
   visibility:-oxy-collapse-text;
 }
@@ -514,7 +515,7 @@ Objective:hover:after {
       actionID, 'add.objective',
       transparent, true,
       color, green
-    ) " to add another onjective";
+    ) " to add another objective";
   color:gray;
 }
 
@@ -585,7 +586,8 @@ Submitter > EmailAddress:before {
   content: oxy_label(text, 'Email address:', width, 8em);
 }
 
-Submitter > * {
+Submitter > *,
+Submitter > *:empty {
   visibility : -oxy-collapse-text;
   content : oxy_textfield(edit, "#text", columns, 40); 
 }

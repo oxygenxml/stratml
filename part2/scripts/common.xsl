@@ -37,11 +37,10 @@
     </xsl:if>
   </xsl:template>
 
+  <xsl:template name="addElement"/>
+
   <xsl:template name="generateID">
-    <xsl:text>ID-</xsl:text>
-    <xsl:value-of select="generate-id()"/>
-    <xsl:text>-</xsl:text>
-    <xsl:value-of select="translate(xs:string(current-dateTime()), '+-:.', '')"/>
+    <xsl:text>ID-${uuid}</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>

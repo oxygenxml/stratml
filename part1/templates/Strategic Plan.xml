@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StrategicPlan xmlns="http://www.stratml.net">
-  <Name>My Plan</Name>
+  <Name/>
+  <Description/>
+  <OtherInformation/>
   <StrategicPlanCore>
+    <Organization>
+      <Name/>
+      <Acronym/>
+      <Identifier>ID-${uuid}</Identifier>
+      <Description/>
+      <Stakeholder>
+        <Name/>
+        <Description/>
+      </Stakeholder>
+    </Organization>
+    <Vision>
+      <Description/>
+      <Identifier>ID-${uuid}</Identifier>
+    </Vision>
+    <Mission>
+      <Description/>
+      <Identifier>ID-${uuid}</Identifier>
+    </Mission>
+    <Value>
+      <Name/>
+      <Description/>
+    </Value>
     <Goal>
-      <Name>My Goal</Name>
-      <Description>My Goal Description</Description>
+      <Name/>
+      <Description/>
+      <Identifier>ID-${uuid}</Identifier>
+      <SequenceIndicator/>
+      <Stakeholder>
+        <Name/>
+        <Description/>
+      </Stakeholder>
+      <OtherInformation/>
+      <Objective>
+        <Name/>
+        <Description/>
+        <Identifier>id-${uuid}</Identifier>
+        <SequenceIndicator/>
+        <Stakeholder>
+          <Name/>
+          <Description/>
+        </Stakeholder>
+        <OtherInformation/>
+      </Objective>
     </Goal>
     <Goal>
-      <Name>My Second Goal</Name>
-      <Description>My Second Goal Description</Description>
+      <Name/>
+      <Description/>
     </Goal>
   </StrategicPlanCore>
+  <AdministrativeInformation>
+    <StartDate>${date(yyyy-MM-dd)}</StartDate>
+    <EndDate>${date(yyyy-MM-dd)}</EndDate>
+    <PublicationDate>${date(yyyy-MM-dd)}</PublicationDate>
+    <Source/>
+    <Submitter>
+      <FirstName/>
+      <LastName/>
+      <PhoneNumber/>
+      <EmailAddress/>
+    </Submitter>
+  </AdministrativeInformation>
 </StrategicPlan>

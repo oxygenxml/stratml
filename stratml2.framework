@@ -314,6 +314,10 @@
 																<String>After</String>
 															</entry>
 															<entry>
+																<String>caretPosition</String>
+																<String>Start</String>
+															</entry>
+															<entry>
 																<String>script</String>
 																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -359,7 +363,7 @@
 											<String>add.description</String>
 										</field>
 										<field name="name">
-											<String>+Desription</String>
+											<String>+Description</String>
 										</field>
 										<field name="description">
 											<String>Add description information</String>
@@ -2383,7 +2387,7 @@
 														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
 													</field>
 												</actionMode>
-											<actionMode>
+												<actionMode>
 													<field name="xpathCondition">
 														<String>self::*:PerformanceIndicator</String>
 													</field>
@@ -2651,7 +2655,7 @@
 														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
 													</field>
 												</actionMode>
-											<actionMode>
+												<actionMode>
 													<field name="xpathCondition">
 														<String>self::*:MeasurementInstance</String>
 													</field>
@@ -2927,7 +2931,7 @@
 											</actionMode-array>
 										</field>
 									</action>
-								<action>
+									<action>
 										<field name="id">
 											<String>publish</String>
 										</field>
@@ -2965,6 +2969,65 @@
 													</field>
 													<field name="operationID">
 														<String>ro.sync.ecss.extensions.commons.operations.ExecuteTransformationScenariosOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>generate.ID</String>
+										</field>
+										<field name="name">
+											<String>[generate ID]</String>
+										</field>
+										<field name="description">
+											<String>Generate an identifier value</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::*:Identifier</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>caretPosition</String>
+																<String>First editable position</String>
+															</entry>
+															<entry>
+																<String>expandEditorVariables</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  &lt;xsl:import href="part2/scripts/generateID.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>

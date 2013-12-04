@@ -45,6 +45,82 @@ Name:empty:after{
   content:"Type the name here-";
 }
 
+Description:empty {
+  content : "Enter the description here";
+  background-color:#FFEEEE;
+}
+Identifier:empty {
+  content : "Enter identifier here";
+  background-color:#FFEEEE;
+}
+
+OtherInformation:empty {
+  content : "Enter information here";
+  background-color:#FFEEEE;
+}
+
+Acronym:empty {
+  content : "Enter acronym here";
+  background-color:#FFEEEE;
+}
+
+SequenceIndicator:empty {
+  content : "Enter sequence indicator here";
+  background-color:#FFEEEE;
+}
+
+MeasurementDimension:empty {
+  content : "Enter measurement dimension here";
+  background-color:#FFEEEE;
+}
+
+UnitOfMeasurement:empty {
+  content : "Enter the unit of measurement here";
+  background-color:#FFEEEE;
+}
+
+NumberOfUnits:empty {
+  content : "Enter the number of units here";
+  background-color:#FFEEEE;
+}
+
+
+StartDate:empty {
+  content : "Enter the start date in the format YYYY-MM-DD here";
+  background-color:#FFEEEE;
+}
+EndDate:empty {
+  content : "Enter the end date in the format YYYY-MM-DDhere";
+  background-color:#FFEEEE;
+}
+PublicationDate:empty {
+  content : "Enter the publication date in the format YYYY-MM-DD here";
+  background-color:#FFEEEE;
+}
+Source:empty {
+  content : "Enter the source URL here";
+  background-color:#FFEEEE;
+}
+
+
+FirstName:empty {
+  content : "Enter the first name here";
+  background-color:#FFEEEE;
+}
+LastName:empty {
+  content : "Enter the last name here";
+  background-color:#FFEEEE;
+}
+PhoneNumber:empty {
+  content : "Enter the phone number here";
+  background-color:#FFEEEE;
+}
+EmailAddress:empty {
+  content : "Enter the email address here";
+  background-color:#FFEEEE;
+}
+
+
 /************************************/
 /* Folds */
 /************************************/
