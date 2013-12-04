@@ -16,7 +16,7 @@
       <xsl:apply-templates select="node() | @*" mode="clear"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="*:Name" mode="clear">
+  <xsl:template match="/*:Goal/*:Name" mode="clear">
     <xsl:copy>
       <xsl:apply-templates select="node() | @*" mode="#current"/>
       <xsl:text>${caret}</xsl:text>

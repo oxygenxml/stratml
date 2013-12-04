@@ -340,7 +340,8 @@ EndDate:before{
 }
 
 
-StartDate, EndDate {
+StartDate, EndDate,
+StartDate:empty, EndDate:empty{
   content:oxy_datePicker(edit, "#text", format, "yyyy-MM-dd", columns, 16);
   visibility:-oxy-collapse-text;
 }
@@ -498,7 +499,7 @@ Objective:after {
       actionID, 'add.objective',
       transparent, true,
       color, green
-    ) " to add another onjective";
+    ) " to add another objective";
   color:gray;
 }
 
@@ -569,7 +570,8 @@ Submitter > EmailAddress:before {
   content: oxy_label(text, 'Email address:', width, 8em);
 }
 
-Submitter > * {
+Submitter > *,
+Submitter > *:empty {
   visibility : -oxy-collapse-text;
   content : oxy_textfield(edit, "#text", columns, 40); 
 }
@@ -582,8 +584,6 @@ Submitter > *:before {
   color:black;
   font-weight: normal;
 }
-
-
 
 
 /************************************************************/
@@ -620,6 +620,24 @@ EndDate:after {
     "]";
 }
 
+Identifier:empty:after {
+  content: 
+  "  ["
+    oxy_button(
+      actionID, 'generate.ID',
+      transparent, true,
+      color, green
+    )
+    "]"
+    " ["
+    oxy_button(
+      actionID, 'delete',
+      transparent, true,
+      color, red
+    )
+    "]";
+}
+
 /* Inline clear and delete */
 Description:after,
 OtherInformation:after,
@@ -638,6 +656,24 @@ NumberOfUnits:after
     )
     "]"
     " ["
+    oxy_button(
+      actionID, 'delete',
+      transparent, true,
+      color, red
+    )
+    "]"
+}
+
+Description:empty:after,
+OtherInformation:empty:after,
+Acronym:empty:after,
+SequenceIndicator:empty:after,
+MeasurementDimension:empty:after,
+UnitOfMeasurement:empty:after,
+NumberOfUnits:empty:after
+{
+  content:
+    "  ["
     oxy_button(
       actionID, 'delete',
       transparent, true,
